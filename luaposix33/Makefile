@@ -19,6 +19,8 @@ PKG_REMOVE_FILES:=aclocal.m4
 PKG_FIXUP:=autoreconf
 PKG_MAINTAINER:=Maxim Storchak <m.storchak@gmail.com>
 
+PKG_BUILD_DEPENDS:=lua/host
+
 include $(INCLUDE_DIR)/package.mk
 
 define Package/luaposix33
@@ -27,8 +29,7 @@ define Package/luaposix33
   CATEGORY:=Languages
   TITLE:=luaposix33
   URL:=http://luaforge.net/projects/luaposix/
-  DEPENDS:=+lua +librt +luabitop +libncursesw
-  PKG_BUILD_DEPENDS:=+lua/host
+  DEPENDS:=+lua +librt +luabitop +libncurses
 endef
 
 define Package/luaposix33/description
